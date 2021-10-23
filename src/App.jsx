@@ -3,7 +3,7 @@ import React from 'react';
 export default function App() {
   return (
     <div>
-      movie search
+      Search for your movie:
     </div>
   )
 }
