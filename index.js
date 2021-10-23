@@ -10,7 +10,6 @@ const { API_KEY } = require('./config.js');
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'dist')));
 
-
 app.listen(PORT, (error) => {
   if (error) {
     console.log(`failed to connect to server port: ${PORT}`);
