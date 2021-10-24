@@ -1,0 +1,27 @@
+$background-color: pink;
+$display: flex;
+
+.container {
+  background-color: $background-color;
+  display: $display;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.columns {
+  display: $display;
+  flex-direction: row;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+}
+
+.rows {
+  display: $display;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
