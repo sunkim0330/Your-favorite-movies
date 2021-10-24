@@ -1,13 +1,8 @@
 import React from "react";
 
 function MovieList({movies}) {
-  // function getUniqueIds(arr, key) {
-  //   return [...new Map(arr.map(item => [item[key], item])).values()]
-  // }
-  // const filterMovieList = movies && getUniqueIds(movies, 'imdbID');
-
   const searchResult = movies && movies
-  .filter((v,i,a)=> a.findIndex( t => (t.imdbID === v.imdbID)) === i)
+  .filter((val,idx,arr)=> arr.findIndex( item => (item.imdbID === val.imdbID)) === idx)
   .map((movie, key) => {
     return (
       <div key={movie.imdbID}>

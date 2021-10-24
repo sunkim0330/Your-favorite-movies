@@ -9,8 +9,7 @@ export default function App() {
 
   useEffect(() => {
     let movieAPI = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}`;
-// http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}
-//http://www.omdbapi.com/?apikey=6cf07075&s=avengers
+
     const getSearchResult = async () => {
       fetch(movieAPI)
         .then((res) => res.json())
