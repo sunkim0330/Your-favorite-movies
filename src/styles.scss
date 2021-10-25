@@ -5,8 +5,12 @@
 $font-stack: 'Philosopher', sans-serif;
 $display: flex;
 
-body {
+html {
   font-family: $font-stack;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
