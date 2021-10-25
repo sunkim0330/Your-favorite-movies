@@ -1,5 +1,13 @@
-$background-color: pink;
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+$font-stack: 'Philosopher', sans-serif;
 $display: flex;
+
+body {
+  font-family: $font-stack;
+}
 
 .container {
   display: $display;
@@ -23,6 +31,53 @@ $display: flex;
       align-items: center;
     }
   }
+}
+
+.title {
+  font-family: 'Rampart One', cursive;;
+  text-align: center;
+}
+
+.search-bar  {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#SearchMovieTitle {
+  width: 20vw;
+  margin-left: 2px;
+  height: 1.5vw;
+}
+
+.search-button {
+  margin-left: 7px;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-family: 'Poiret One', cursive;
+  font-size: 12px;
+  background: pink;
+  &:hover {
+    background:darken(pink,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken(pink,25%);
+  }
+}
+
+.movie-title {
+  margin: 0.5vw;
+}
+
+.movie-year {
+  margin: 0.5vw;
+}
+
+.movie-poster {
+  margin: 1vw;
 }
 
 

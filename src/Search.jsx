@@ -16,15 +16,15 @@ function Search(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Search for movie: </label>
+      <form onSubmit={handleSubmit} className="search-bar">
+        <label className="search-bar-title">Search for movie: </label>
         <input
           id="SearchMovieTitle"
           type="text"
           value={movieTitle}
           onChange={handleChange}
         />
-        <input type="submit" value="Find Movies"/>
+        <input className="search-button" type="submit" value="Find Movies"/>
       </form>
     </div>
   )
