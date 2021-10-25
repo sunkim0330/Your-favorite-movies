@@ -6,25 +6,51 @@ import MovieList from './MovieList.jsx';
 export default function App() {
   const [movieData, setmovieData] = useState();
   const [movieTitle, setMovieTitle] = useState('');
+  const [page, setPage] = useState(1);
+  // useEffect(() => {
+  //   let movieAPI = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}`;
+
+  //   const getSearchResult = async () => {
+  //     fetch(movieAPI)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setmovieData(data.Search)
+  //       })
+  //       .catch(error => console.log('Error', error))
+  //   }
+  //   getSearchResult();
+  // }, [movieTitle])
+
+  const fetchData = (pageNum = 1) => {
+    let movieAPI = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}&page=${pageNum}`;
+
+    fetch(movieAPI)
+      .then(res => res.json())
+      .then(data => {
+        setmovieData(data.Search)
+      })
+      .catch(error => console.log('Error', error))
+  }
 
   useEffect(() => {
-    let movieAPI = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}`;
-
-    const getSearchResult = async () => {
-      fetch(movieAPI)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data.Search)
-          setmovieData(data.Search)
-        })
-    }
-    getSearchResult();
+    window.addEventListener('scroll', infiniteScroll());
+    fetchData(page);
   }, [movieTitle])
+
+  const infiniteScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight) {
+      let newPage = page;
+      page++;
+
+      setPage(newPage);
+
+      fetchData(newPage);
+    }
+  }
 
   const handleSubmit = (title) => {
     setMovieTitle(title);
   }
-
 
   return (
     <div>

@@ -10,6 +10,7 @@ body {
 }
 
 .container {
+  margin: 2%;
   display: $display;
   flex-direction: row;
   flex-wrap: wrap;
@@ -58,13 +59,15 @@ body {
   padding: 5px 10px;
   font-family: 'Poiret One', cursive;
   font-size: 12px;
-  background: pink;
+  background: #fa9eff;
+  border-radius: 5px;
+  border-color: #f37dfa;
   &:hover {
-    background:darken(pink,8%);
+    background:darken(#fa9eff,8%);
     transition: all 0.3s ease;
   }
   &:active {
-    background:darken(pink,25%);
+    background:darken(#fa9eff,25%);
   }
 }
 
