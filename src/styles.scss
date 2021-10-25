@@ -1,0 +1,52 @@
+$background-color: pink;
+$display: flex;
+
+.container {
+  display: $display;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .columns {
+    display: $display;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 30%;
+
+    .rows {
+      display: $display;
+      flex-direction: column;
+      padding: 10px;
+      align-items: center;
+    }
+  }
+}
+
+
+/* responsive design*/
+// @mixin grid($cols: 3, $mgn) {
+//   float: left;
+//   margin-right: $mgn;
+//   margin-bottom: $mgn;
+//   width: ( (100% - (($cols - 1) * $mgn )) / $cols );
+
+//   &:nth-child(#{$cols}n) {
+//     margin-right: 0;
+
+//   }
+// }
+
+
+// @media (min-width: 480px)  {
+//   .columns{ @include grid(2, 2%); background-color: lightcyan;}
+// }
+// @media (min-width: 768px) {
+//   .columns{ @include grid(3, 2%); background-color: lightpink;}
+// }
+// @media (min-width: 920px) {
+//   .columns{ @include grid(4, 2%); background-color: lightslategrey;}
+// }
+
