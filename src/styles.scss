@@ -117,6 +117,7 @@ html {
 }
 
 .movie-info-container {
+  border-radius: 20px;
   width: 50vw;
   margin: 2vw;
   background-color: palevioletred;
@@ -125,19 +126,19 @@ html {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: all ease 1s;
 }
 
 .movie-info-modal {
-  margin: 0.5vw;
+  margin: 1vw;
 }
 
 .modal-close-button {
-  margin: 2vw;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 2rem;
+  padding: 0.5rem 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: 18px;
