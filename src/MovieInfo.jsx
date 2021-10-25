@@ -28,28 +28,19 @@ const MovieInfo = ({movieId, show, onClose, currentMovie}) => {
 
   return (
     <div className="movie-info-container">
-
-      {movieDetails && movieDetails.map(movie => {
-        return <div>{movie.Plot}</div>
+      {movieDetails && movieDetails.map((movie) => {
+        return (
+          <div className="movie-info-modal">
+            <h2 className="movie-info-title">Title: {movie.Title}</h2>
+            <h3 className="movie-info-genre">Genre: {movie.Genre}</h3>
+            <h3 className="movie-info-released">Released Date: {movie.Released}</h3>
+            <p className="movie-info-plot"><b>Plot:</b> {movie.Plot}</p>
+            <button className="modal-close-button bn37" onClick={onClose}>Close</button>
+          </div>
+        )
       })}
-
-      <button onClick={onClose}>Close</button>
     </div>
   )
 }
 
 export default MovieInfo;
-
-/*
-{Object.keys(movieDetails).map((item, idx) => {
-      <div key={idx}>
-        <h3>{movieDetails[item]}</h3>
-        <button onClose={props.onClose}>Close</button>
-      </div>
-      })}
-
-
-      {movieDetails && movieDetails.map(movie => {
-        return <div>{movie.Plot}</div>
-      })}
-*/

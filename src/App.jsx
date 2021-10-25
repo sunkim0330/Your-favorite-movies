@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <div>
-      <h1 className="title">What is your favorite movie?</h1>
+      <h1 className="page-title">What is your favorite movie?</h1>
       <Search handleSubmit={handleSubmit} />
       <MovieList movies={movieData} />
     </div>

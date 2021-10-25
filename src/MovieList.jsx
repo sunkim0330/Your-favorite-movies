@@ -16,21 +16,7 @@ function MovieList({movies}) {
     setCurrentMovie(null);
     setShow(false);
   }
-  // const [movieDetails, setMovieDetails] = useState([]);
 
-  // const fetchData = () => {
-  //   fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${movieId}&plot=full`)
-  //   .then(res => res.json())
-  //   .then(data =>
-  //     setMovieDetails(data)
-  //     )
-  //   .catch(err => console.log('Error', err));
-  // }
-
-  // useEffect(() => {
-  //   fetchData();
-  //   return () => {setMovieDetails(null)};
-  // }, [show])
 
   const searchResult = movies && movies
   .filter((val,idx,arr)=> arr.findIndex( item => (item.imdbID === val.imdbID)) === idx)
@@ -38,7 +24,7 @@ function MovieList({movies}) {
     return (
       <div className="columns" key={movie.imdbID}>
         <div className="rows">
-          <button onClick={() => openModal(movie)}>{movie.Title}</button>
+          <div type="button" className="Movie-Title" onClick={() => openModal(movie)}>{movie.Title}</div>
           <MovieInfo movieId={movie.imdbID} show={show} onClose={closeModal} currentMovie={currentMovie}/>
           <h4 className="movie-year">Year: {movie.Year}</h4>
           <img className="movie-poster" src={movie.Poster !== 'N/A' ? movie.Poster : placeholder} width='200px' />
