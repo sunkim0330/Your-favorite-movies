@@ -1,10 +1,7 @@
 import React, {useEffect, useState} from 'react';
-// import Modal from './Modal.jsx';
 import {API_KEY} from '../config.js';
 
 const MovieInfo = ({movieId, show, onClose, currentMovie}) => {
-  // console.log('ids', movieId)
-  // const [show, setShow] = useState(false)
   const [movieDetails, setMovieDetails] = useState();
 
   const fetchData = () => {
@@ -28,9 +25,9 @@ const MovieInfo = ({movieId, show, onClose, currentMovie}) => {
 
   return (
     <div className="movie-info-container">
-      {movieDetails && movieDetails.map((movie) => {
+      {movieDetails && movieDetails.map((movie, idx) => {
         return (
-          <div className="movie-info-modal">
+          <div className="movie-info-modal" key={idx}>
             <h2 className="movie-info-title">Title: {movie.Title}</h2>
             <h3 className="movie-info-genre">Genre: {movie.Genre}</h3>
             <h3 className="movie-info-released">Released Date: {movie.Released}</h3>

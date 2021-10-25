@@ -4,7 +4,7 @@ import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';
 
 export default function App() {
-  const [movieData, setmovieData] = useState();
+  const [movieData, setmMovieData] = useState();
   const [movieTitle, setMovieTitle] = useState('');
 
 
@@ -15,7 +15,7 @@ export default function App() {
       fetch(movieAPI)
         .then(res => res.json())
         .then(data => {
-          setmovieData(data.Search)
+          setmMovieData(data.Search)
         })
         .catch(error => console.log('Error', error))
     }

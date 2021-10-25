@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import placeholder from './images/film-poster-placeholder.png';
 import MovieInfo from './MovieInfo.jsx';
-import axios from 'axios';
 
 function MovieList({movies}) {
   const [show, setShow] = useState(false)

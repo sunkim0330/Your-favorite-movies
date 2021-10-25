@@ -3,11 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
-$font-stack: 'Philosopher', sans-serif;
 $display: flex;
 
 html {
-  font-family: $font-stack;
+  font-family: 'Philosopher', sans-serif;;
   background-image: url('./images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -160,7 +159,9 @@ html {
   }
 }
 
-/* responsive design*/
+
+/* responsive design- has a bug, still trying to figure out */
+
 // @mixin grid($cols: 3, $mgn) {
 //   float: left;
 //   margin-right: $mgn;
