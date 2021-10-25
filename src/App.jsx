@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useReducer, UseCallback, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 import {API_KEY} from '../config.js';
 import Search from './Search.jsx';
 import MovieList from './MovieList.jsx';
@@ -11,10 +11,10 @@ export default function App() {
   useEffect(() => {
     let movieAPI = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${movieTitle}&type=movie`;
 
-    const getSearchResult = async () => {
+    const getSearchResult = () => {
       fetch(movieAPI)
-        .then((res) => res.json())
-        .then((data) => {
+        .then(res => res.json())
+        .then(data => {
           setmovieData(data.Search)
         })
         .catch(error => console.log('Error', error))
