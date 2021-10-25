@@ -1,5 +1,4 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const ENTRY = path.join(__dirname, 'src', 'index.js');
 const OUTPUT = path.join(__dirname, 'dist');
